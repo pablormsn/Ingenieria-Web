@@ -1,0 +1,7 @@
+# Virtual Environment folders
+.venv
+venv
+env
+
+#.env
+__pycache__

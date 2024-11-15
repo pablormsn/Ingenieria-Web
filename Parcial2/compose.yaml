@@ -1,0 +1,17 @@
+x-service-base: &service-base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  env_file:
+    - .env
+
+services:
+  usuarios-eventos:
+    <<: *service-base
+    build:
+      args:
+        SERVICE_PATH: main
+        SERVICE_PORT: ${SERVICE_PORT}
+    container_name: main
+    ports:
+      - ${SERVICE_PORT}:${SERVICE_PORT}
